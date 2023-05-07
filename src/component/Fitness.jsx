@@ -4,7 +4,7 @@ import "./Pages.css"
 const Fitness = () => {
     const[product,newproduct]=useState([]);
     useEffect(()=>{
-        fetch("https://projectapi-bxwq.onrender.com/fitness")
+        fetch("https://blogmongodb5.onrender.com/fitness")
         .then((res)=>res.json())
         .then((res)=>{console.log(res)
         newproduct(res)})
@@ -15,12 +15,12 @@ const Fitness = () => {
    <>
     <h1 className='heading-fit'>Fitness</h1>
     <div className='fitmain'>
-{product.map((item)=>{
+{product.map((item,index)=>{
 return(
  
 
   
-       <div className='fitcard'>
+       <div className='fitcard' key={index}>
         <img src={item.img} alt="" srcset=""className='fitimg' />
         <br />
         <h2 className='headind-fit-card'>{item.title}</h2>

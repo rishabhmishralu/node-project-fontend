@@ -4,7 +4,7 @@ const Food = () => {
 
   const[product,newproduct]=useState([]);
     useEffect(()=>{
-        fetch("https://projectapi-bxwq.onrender.com/food")
+        fetch("https://blogmongodb5.onrender.com/food")
         .then((res)=>res.json())
         .then((res)=>{console.log(res)
         newproduct(res)})
@@ -23,10 +23,10 @@ const Food = () => {
 
       
   {
-    product.map((item)=>{
+    product.map((item,index)=>{
       return(
        
-          <div className='main-1'>
+          <div className='main-1' key={index}>
 
          <div className='box-1'><img src={item.img} alt="404" className='img1'/><h4 className='heading-box-1'>{item.title}</h4></div>
   
